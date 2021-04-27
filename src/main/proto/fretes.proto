@@ -18,6 +18,11 @@ message CalculaFreteRequest{
   string cep = 1;
 }
 
+message ErrorDetails {
+  int32 code = 1;
+  string message = 2;
+}
+
 message CalculaFreteResponse{
   double valor = 1;
   string cep = 2;
