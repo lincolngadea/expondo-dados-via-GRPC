@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.kotlin.grpc";
+option java_outer_classname = "Fretes";
+option objc_class_prefix = "HLW";
+
+package io.kotlin.grpc;
+
+service FretesService {
+  rpc send (FretesRequest) returns (FretesReply) {}
+
+  rpc calculaFrete(CalculaFreteRequest) returns (CalculaFreteResponse){}
+
+}
+
+message CalculaFreteRequest{
+  string cep = 1;
+}
+
+message CalculaFreteResponse{
+  double valor = 1;
+  string cep = 2;
+}
+
+message FretesRequest {
+  string name = 1;
+}
+
+message FretesReply {
+  string message = 1;
+}
